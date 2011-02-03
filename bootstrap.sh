@@ -1,6 +1,6 @@
 # Clone repo
 echo "=> Downloading"
-git clone git://github.com/gf3/dotfiles.git ~/.dotfiles
+git clone git://github.com/thisbetom/dotfiles.git ~/.dotfiles
 
 # Install!
 echo "=> Installing"
