@@ -20,6 +20,4 @@ alias nr="node-repl"
 alias view="vim -p -R"
 alias vp="vim -p"
 
-# Sync
-alias sync_irc="rsync -avz ~/Sites/IRC/ talos:/mnt/www/irc.gf3.ca/public"
 
