@@ -21,3 +21,6 @@ if [ -d ~/.scripts ] ; then
 fi
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
