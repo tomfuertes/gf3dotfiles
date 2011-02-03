@@ -1,9 +1,11 @@
 [user]
-  name = Gianni Chiappetta
-  email = EMAIL
+  name = Tom Fuertes
+  email = stay@home-tom.com
 [github]
-  user = gf3
+  user = thisbetom
   token = TOKEN
+[core]
+  excludesfile = /Users/tomfuertes/.gitignore  
 [alias]
   br = branch
   ci = commit
