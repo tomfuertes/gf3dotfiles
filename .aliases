@@ -20,4 +20,62 @@ alias nr="node-repl"
 alias view="vim -p -R"
 alias vp="vim -p"
 
+# J
+export JPY=~/sandbox/git-repos/j2/j.py # tells j.sh where the python script is
+. ~/sandbox/git-repos/j2/j.sh          # provides the j() function
+alias jl='j -l'
+alias jt='j -t recent'
+alias jr='j -t rank'
+
+# t
+alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
+alias a='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list alex.txt'
+alias i='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list ideas.txt'
+alias p='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
+#alias g='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list groceries'
+#alias m='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list music-to-buy'
+
+
+# Git Repos
+function gg() {
+  if [ $# -gt 0 ]; then
+    for i in $(echo $*); do
+      if [ -d ${i} ]; then
+        ( echo '*** Pulling' ${i} && cd ${i} && git pull )
+      else
+        echo "No such directory: \"${i}\", skipping ..."
+      fi
+    done
+  else
+    echo "usage: gg <git repo dir>"
+  fi
+}
+
+function gs() {
+  if [ $# -gt 0 ]; then
+    for i in $(echo $*); do
+      if [ -d ${i} ]; then
+        ( echo '***' ${i} && cd ${i} && git cherry -v origin/master && git status -s )
+      else
+        echo "No such directory: \"${i}\", skipping ..."
+      fi
+    done
+  else
+    echo "usage: gst <git repo dir>"
+  fi
+}
+
+function ssd() { 
+  if [ $# -gt 0 ]; then
+    fab -f ~/sandbox/tools/fabfile.py push:$@ 
+  fi
+}
+
+alias gup="gg ~/sandbox/git-repos/*"
+alias gst="gs ~/sandbox/git-repos/*"
+alias clean='find . -name "*.pyc" -delete'
+alias uptommy="ssh -t tommy@173.255.202.230 'cd /var/tommyangelo/; sudo git pull;'"
+
+alias c="clear"
+
 
