@@ -13,7 +13,9 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+if version > 702
+  set undodir=~/.vim/undo
+endif
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
@@ -71,7 +73,9 @@ set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.br
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
-set undofile " Persistent Undo.
+if version > 702
+  set undofile " Persistent Undo.
+endif
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,build,**/ckeditor/**
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
@@ -169,9 +173,11 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" Set relative line numbers
-set relativenumber " Use relative line numbers. Current line is still in status bar.
-au BufReadPost * set relativenumber
+if version > 702
+  " Set relative line numbers
+  set relativenumber " Use relative line numbers. Current line is still in status bar.
+  au BufReadPost * set relativenumber
+endif
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
@@ -180,6 +186,12 @@ call pathogen#runtime_append_all_bundles()
 augroup mkd
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
+
+" CSS3
+au BufRead,BufNewFile *.css set ft=css syntax=css3
+
+" HTML5
+au BufRead,BufNewFile *.html set ft=html syntax=html5
 
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
@@ -196,3 +208,20 @@ let g:CommandTCancelMap=['<Esc>', '<C-c>']
 " Sparkup
 let g:sparkupNextMapping=''
 
+""" Tom added shiz
+
+" tabstop = 2
+set tabstop=2
+
+" Run .vimrc after every save
+autocmd! bufwritepost .vimrc source %
+
+" jj = esc
+inoremap jj <ESC>
+
+" Disable beep
+set vb
+
+" SnipMate for Django
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
