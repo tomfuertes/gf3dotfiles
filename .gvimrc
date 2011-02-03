@@ -5,5 +5,7 @@ set guifont=Menlo:h13 " Set default font
 nmap <D-j> :tabprevious<CR>
 nmap <D-k> :tabnext<CR>
 
-" PeepOpen (,o)
-map <unique> <silent> <Leader>o <Plug>PeepOpen
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
+end
