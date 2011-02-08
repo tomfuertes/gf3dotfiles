@@ -1,0 +1,7 @@
+[ui]
+username = Gianni Chiappetta <gianni@runlevel6.org>
+ssh = ssh -C
+ignore = ~/.hgignore
+editor = vim
+[extensions]
+prompt = ~/Projects/python/hg-prompt/prompt.py
