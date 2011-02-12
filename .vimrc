@@ -98,6 +98,9 @@ noremap <leader>W :w !sudo tee %<CR>
 " Remap :W to :w
 command W w
 
+" Better mark jumping (line + col)
+nnoremap ' `
+
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
@@ -198,6 +201,9 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
 " Jade
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
+
+" Common Ruby files
+au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
 " Command-T
 let g:CommandTMaxFiles=20000
