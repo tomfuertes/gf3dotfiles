@@ -80,6 +80,7 @@ set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,build,**/ckeditor/**
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 set wildmode=list:longest " Complete only until point of ambiguity.
+set winminheight "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
 " Speed up viewport scrolling
@@ -91,6 +92,10 @@ if bufwinnr(1)
   map + <C-W>+
   map - <C-W>-
 endif
+
+" Better split switching (Ctrl-j, Ctrl-k)
+map <C-j> <C-W>j
+map <C-k> <C-W>k
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
@@ -125,9 +130,6 @@ nnoremap <leader>[ <i{<CR>
 " Paste toggle (,p)
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
-
-" NERD Tree (,n)
-map <leader>n :NERDTreeToggle<CR>
 
 " NERD Commenter
 let NERDSpaceDelims=1
