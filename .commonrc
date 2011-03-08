@@ -1,0 +1,20 @@
+# Load things
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
+
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
+
+# Adjust $PATH
+if [ -d ~/.scripts ] ; then
+  export PATH=$HOME/.scripts:$PATH
+fi
+
+# Misc settings
+export EDITOR=vim
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
