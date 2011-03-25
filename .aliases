@@ -18,19 +18,15 @@ alias mp="mvim -p"
 alias view="vim -p -R"
 alias vp="vim -p"
 
-# J
-export JPY=~/sandbox/git-repos/j2/j.py # tells j.sh where the python script is
-. ~/sandbox/git-repos/j2/j.sh          # provides the j() function
-alias jl='j -l'
-alias jt='j -t recent'
-alias jr='j -t rank'
+# Z
+. ~/sandbox/git-repos/z-zsh/z.sh          # provides the j() function
 
 # t
 alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
 alias a='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list alex.txt'
 alias i='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list ideas.txt'
 alias todo='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list todo.txt'
-alias p='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
+alias poker='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
 #alias g='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list groceries'
 #alias m='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list music-to-buy'
 
@@ -73,7 +69,6 @@ function ssd() {
 alias gup="gg ~/sandbox/git-repos/*"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete'
-alias uptommy="ssh -t tommy@173.255.202.230 'cd /var/tommyangelo/; sudo git pull;'"
 
 alias c="clear"
 
