@@ -19,7 +19,7 @@ alias view="vim -p -R"
 alias vp="vim -p"
 
 # Z
-. ~/sandbox/git-repos/z-zsh/z.sh          # provides the j() function
+. ~/sandbox/git-repos/z-zsh/z.sh          # provides the z() function
 
 # t
 alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
@@ -27,9 +27,6 @@ alias a='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo
 alias i='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list ideas.txt'
 alias todo='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list todo.txt'
 alias poker='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
-#alias g='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list groceries'
-#alias m='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/tasks --list music-to-buy'
-
 
 # Git Repos
 function gg() {
