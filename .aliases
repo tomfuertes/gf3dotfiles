@@ -18,8 +18,13 @@ alias mp="mvim -p"
 alias view="vim -p -R"
 alias vp="vim -p"
 
-## Z
-#. ~/sandbox/git-repos/z-zsh/z.sh          # provides the z() function
+# J
+export JPY=~/sandbox/git-repos/j2/j.py # tells j.sh where the python script is
+. ~/sandbox/git-repos/j2/j.sh          # provides the j() function
+alias jl='j -l'
+alias jt='j -t recent'
+alias jr='j -t rank'
+
 
 # t
 alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
