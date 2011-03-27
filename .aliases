@@ -18,8 +18,8 @@ alias mp="mvim -p"
 alias view="vim -p -R"
 alias vp="vim -p"
 
-# Z
-. ~/sandbox/git-repos/z-zsh/z.sh          # provides the z() function
+## Z
+#. ~/sandbox/git-repos/z-zsh/z.sh          # provides the z() function
 
 # t
 alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'

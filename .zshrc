@@ -29,3 +29,10 @@ export PATH=$PATH:/Users/gianni/Projects/java/android-sdk-mac_x86/tools
 # Common junk
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
 
+# z-zsh
+. $HOME/sandbox/git-repos/z-zsh/z.sh  # z function
+
+function precmd () {
+  z --add "$(pwd -P)"
+}
+
