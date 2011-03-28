@@ -62,12 +62,6 @@ function gs() {
   fi
 }
 
-function ssd() { 
-  if [ $# -gt 0 ]; then
-    fab -f ~/sandbox/tools/fabfile.py push:$@ 
-  fi
-}
-
 alias gup="gg ~/sandbox/git-repos/*"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete'
