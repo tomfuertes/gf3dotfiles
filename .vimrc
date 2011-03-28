@@ -141,9 +141,9 @@ inoremap <Right> <NOP>
 nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 
-" Paste toggle (,p)
-set pastetoggle=<leader>p
-map <leader>p :set invpaste paste?<CR>
+" " Paste toggle (,p)
+" set pastetoggle=<leader>p
+" map <leader>p :set invpaste paste?<CR>
 
 " NERD Commenter
 let NERDSpaceDelims=1
