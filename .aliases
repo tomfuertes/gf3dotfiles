@@ -62,8 +62,8 @@ function gs() {
   fi
 }
 
-alias gup="gg ~/sandbox/git-repos/*"
-alias gst="gs ~/sandbox/git-repos/*"
+alias gup="gg ~/sandbox/*"
+alias gst="gs ~/sandbox/*"
 alias clean='find . -name "*.pyc" -delete'
 
 alias c="clear"
