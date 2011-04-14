@@ -39,8 +39,6 @@ function gg() {
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
         ( echo '*** Pulling' ${i} && cd ${i} && git pull | grep -v "Already up-to-date." )
-      else
-        echo "No such directory: \"${i}\", skipping ..."
       fi
     done
   else
@@ -53,8 +51,6 @@ function gs() {
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
         ( echo '***' ${i} && cd ${i} && git cherry -v origin/master && git status -s )
-      else
-        echo "No such directory: \"${i}\", skipping ..."
       fi
     done
   else
