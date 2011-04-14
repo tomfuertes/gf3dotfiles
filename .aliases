@@ -37,7 +37,7 @@ alias poker='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list p
 function gg() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
-      if [ -d ${i} ]; then
+      if [ -d ${i}/.git ]; then
         ( echo '*** Pulling' ${i} && cd ${i} && git pull | grep -v "Already up-to-date." )
       else
         echo "No such directory: \"${i}\", skipping ..."
@@ -51,7 +51,7 @@ function gg() {
 function gs() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
-      if [ -d ${i} ]; then
+      if [ -d ${i}/.git ]; then
         ( echo '***' ${i} && cd ${i} && git cherry -v origin/master && git status -s )
       else
         echo "No such directory: \"${i}\", skipping ..."
