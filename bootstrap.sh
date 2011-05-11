@@ -15,7 +15,7 @@ function e_list { echo  "  \033[1;31m✖\033[0m $1"; }
 function dep {
   # Check installed
   local i=true
-  type -P $1 &> /dev/null || i=false
+  type -p $1 &> /dev/null || i=false
 
   # Check version
   if $i ; then
@@ -27,7 +27,7 @@ function dep {
   
   # Save if dep not met
   if ! $i || [ -n "$msg" ] ; then
-    missing[${#missing[*]}]=$msg
+    missing+=($msg)
   fi
 }
 
@@ -40,7 +40,7 @@ notice "Checking dependencies"
 dep "git"  "1.7"
 dep "hg"   "1.6"
 dep "ruby" "1.8"
-dep "vim " "7.3"
+dep "vim" "7.3"
 dep "tree" "1.5"
 
 if [ "${#missing[@]}" -gt "0" ]; then
@@ -66,12 +66,12 @@ else
   # --- Clone Repo --- #
   notice "Downloading"
   git clone git://github.com/thisbetom/dotfiles.git ~/.dotfiles
-  git submodule init
-  git submodule update
 
   # --- Install --- #
   notice "Installing"
   cd ~/.dotfiles
+  git submodule init
+  git submodule update
   rake backup
   rake install
 fi
