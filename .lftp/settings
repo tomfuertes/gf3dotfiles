@@ -1,2 +1,6 @@
 # lftp settings
 # requires uncommmenting of "source ~/.lftp/settings" in /usr/local/etc/lftp.conf in a default brew install
+
+
+set ftp:ssl-allow off
+set ssl:verify-certificate no
