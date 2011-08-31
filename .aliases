@@ -59,11 +59,15 @@ function gs() {
   fi
 }
 
+function clean() {
+  find . -name "*.pyc" -delete
+  find . -name ".DS_STORE" -delete
+}
+
 alias gup="gg ~/sandbox/*"
 alias gupall="gg ~/sandbox/git-repos/*"
 alias gst="gs ~/sandbox/*"
 alias gstall="gs ~/sandbox/git-repos/*"
-alias clean='find . -name "*.pyc" -delete'
 
 alias c="clear"
 
