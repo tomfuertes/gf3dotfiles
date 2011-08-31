@@ -61,7 +61,7 @@ function gs() {
 
 function clean() {
   find . -name "*.pyc" -delete
-  find . -name ".DS_STORE" -delete
+  find . -name ".DS_Store" -delete
 }
 
 alias gup="gg ~/sandbox/*"
