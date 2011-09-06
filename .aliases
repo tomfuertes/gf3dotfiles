@@ -65,6 +65,8 @@ alias gst="gs ~/sandbox/*"
 alias gstall="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 
+alias resetaudio='sudo killall coreaudiod'
+
 alias c="clear"
 
 
