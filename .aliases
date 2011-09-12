@@ -27,12 +27,12 @@ alias jt='j -t recent'
 alias jr='j -t rank'
 
 
-# t
-alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
-alias a='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list alex.txt'
-alias i='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list ideas.txt'
-alias todo='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list todo.txt'
-alias poker='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
+# # t
+# alias t='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list tom.txt'
+# alias a='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list alex.txt'
+# alias i='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/NoTambourine/todo --list ideas.txt'
+# alias todo='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list todo.txt'
+# alias poker='python ~/sandbox/hg-repos/t/t.py --task-dir ~/Dropbox/todo --list poker.txt'
 
 # Git Repos
 function gg() {
