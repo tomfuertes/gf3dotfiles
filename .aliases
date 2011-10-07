@@ -64,6 +64,7 @@ alias gupall="gg ~/sandbox/git-repos/*"
 alias gst="gs ~/sandbox/*"
 alias gstall="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
+alias smush='python ~/sandbox/git-repos/smush.py/smush.py -r -s'
 
 alias resetaudio='sudo killall coreaudiod'
 
