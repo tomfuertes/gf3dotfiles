@@ -6,6 +6,7 @@
   token = TOKEN
 [core]
   excludesfile = /Users/tomfuertes/.gitignore  
+  autocrlf = true
 [alias]
   br = branch
   ci = commit
