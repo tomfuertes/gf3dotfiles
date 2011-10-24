@@ -1,7 +1,7 @@
 " Make vim more useful
 set nocompatible
 
-"Set syntax highlighting options.
+" Set syntax highlighting options.
 set t_Co=256
 set background=dark 
 syntax on
