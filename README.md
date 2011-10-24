@@ -5,7 +5,7 @@
 * Git (1.7+)
 * Mercurial (1.6+)
 * Ruby (1.9 recommended) and RubyGems
-* Vim (7.3+ with +ruby, I recommend [this formula](https://github.com/adamv/homebrew/blob/duplicates/Library/Formula/vim.rb))
+* Vim (7.3+ with +ruby, I recommend [this formula](https://github.com/adamv/homebrew-alt/blob/master/duplicates/vim.rb))
 * Tree
 
 Optional, but recommended:
@@ -72,7 +72,7 @@ As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageU
 * `^h` Go to split left.
 * `^l` Go to split right.
 
-### Markdow
+### Markdown
 
 * `,mp` Preview markdown buffer with Github styles.
 * `,mf` Render markdown buffer to html in a file.
@@ -88,8 +88,8 @@ Installed plugins and syntax files.
 
 * Ack
 * Cocoa
-* Command-T
 * CSS-color
+* CtrlP
 * Gist
 * Haml
 * Histwin
@@ -101,10 +101,10 @@ Installed plugins and syntax files.
 * Pastie
 * Pathogen
 * Racket
+* Rainbow Parenthesis
 * Rails
 * Repeat
 * Snipmate
-* Sparkup
 * Stylus
 * Surround
 * Taglist Plus

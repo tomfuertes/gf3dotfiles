@@ -81,7 +81,8 @@ if version > 702
   set undofile " Persistent Undo.
 endif
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,build,**/ckeditor/**
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
@@ -237,11 +238,12 @@ au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt s
 " Nu
 au BufNewFile,BufRead *.nu,*.nujson,Nukefile setf nu
 
-" Command-T
-let g:CommandTMaxFiles=20000
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=12
-let g:CommandTCancelMap=['<Esc>', '<C-c>']
+" Coffee Folding
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+" CtrlP
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_mru_files = 1
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
@@ -268,5 +270,5 @@ inoremap jj <ESC>
 set vb
 
 " SnipMate for Django
-"autocmd FileType python set ft=python.django " For SnipMate
-"autocmd FileType html set ft=htmldjango.html " For SnipMate
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
