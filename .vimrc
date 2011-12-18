@@ -275,7 +275,9 @@ inoremap jj <ESC>
 " Disable beep
 set vb
 
-" SnipMate for Django
-autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
+"" SnipMate for Django
+au BufRead,BufNewFile *.py set ft=python.django syntax=python.django
+au BufRead,BufNewFile *.html set ft=htmldjango.html syntax=htmldjango.html
+" autocmd FileType python set ft=python.django " For SnipMate
+" autocmd FileType html set ft=htmldjango.html " For SnipMate
 
