@@ -224,7 +224,7 @@ augroup mkd
 augroup END
 
 " CSS3
-au BufRead,BufNewFile *.css set ft=css syntax=css3
+au BufRead,BufNewFile *.css set ft=css syntax=css
 
 " HTML5
 au BufRead,BufNewFile *.html set ft=html syntax=html5
