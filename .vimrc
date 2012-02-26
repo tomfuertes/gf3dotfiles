@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark 
 syntax on
-colorscheme molokai
+colorscheme badwolf
 
 " Enabled later, after Pathogen
 filetype off
@@ -52,6 +52,10 @@ set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
 set incsearch " Highlight dynamically as pattern is typed.
 set laststatus=2 " Always show status line
+set lispwords+=defroutes " Compojure
+set lispwords+=defpartial,defpage " Noir core
+set lispwords+=defaction,deffilter,defview,defsection " Ciste core
+set lispwords+=describe,it " Speclj TDD/BDD
 set magic " Enable extended regexes.
 set mouse=a " Enable moouse in all in all modes.
 set noerrorbells " Disable error bells.
@@ -89,9 +93,10 @@ set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
 " Status Line
-hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
-hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
-set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
+" hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
+" hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
+" set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
+let g:Powerline_symbols = 'fancy'
 
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
@@ -250,6 +255,11 @@ let g:ctrlp_working_path_mode = 2 " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_split_window = 1 " <CR> = New Tab
+
+" Clojure.vim
+let g:vimclojure#ParenRainbow = 1 " Enable rainbow parens
+let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
+let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be indented as if they were included in the 'lispwords' option
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
