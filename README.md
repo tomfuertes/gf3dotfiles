@@ -88,12 +88,15 @@ As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageU
 Installed plugins and syntax files.
 
 * Ack
+* Clojure
 * Cocoa
 * CoffeeScript
 * CSS-color
 * CtrlP
+* Fish
 * Gist
 * Haml
+* Handlebars
 * Histwin
 * Jade
 * Javascript
@@ -101,11 +104,14 @@ Installed plugins and syntax files.
 * Nerdcommenter
 * Nu
 * Pastie
+* Powerline
 * Pathogen
 * Racket
 * Rails
 * Rainbow Parenthesis
 * Repeat
+* Ruby
+* Slim
 * Snipmate
 * Stylus
 * Surround
