@@ -1,11 +1,10 @@
 [user]
   name = Tom Fuertes
-  email = stay@home-tom.com
+  email = tfuertesha@homeaway.com
 [github]
-  user = thisbetom
-  token = TOKEN
+  user = tfuertesha
 [core]
-  excludesfile = /Users/tomfuertes/.gitignore  
+  excludesfile = /Users/tfuertes/.gitignore  
   # autocrlf = true
 [alias]
   br = branch
