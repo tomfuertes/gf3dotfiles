@@ -23,7 +23,7 @@ have ruby and ruby gems installed on your system: `gem install rake bundler`.
 
 Then:
 
-    zsh < <( curl https://raw.github.com/thisbetom/dotfiles/master/bootstrap.sh )
+    zsh < <( curl https://raw.github.com/tfuertesha/dotfiles/master/bootstrap.sh )
 
 Don't worry, all your old files will be backed up!
 
@@ -128,12 +128,12 @@ Rudimentary support for vim on the iPad has been added via usage of the
 # Shell
 
 Most of the shell junk is setup to work in both zsh and bash. Bash users should
-see [.bash_profile](https://github.com/thisbetom/dotfiles/blob/master/.bash_profile)
-and [.bash_prompt](https://github.com/thisbetom/dotfiles/blob/master/.bash_prompt).
+see [.bash_profile](https://github.com/tfuertesha/dotfiles/blob/master/.bash_profile)
+and [.bash_prompt](https://github.com/tfuertesha/dotfiles/blob/master/.bash_prompt).
 
 ## Aliases
 
-Check out [.aliases](https://github.com/thisbetom/dotfiles/blob/master/.aliases)
+Check out [.aliases](https://github.com/tfuertesha/dotfiles/blob/master/.aliases)
 
 ## Scripts
 
@@ -148,10 +148,10 @@ Additional useful scripts bundled:
 
 I've included some handy git script additions as well as configution changes.
 Have a look at
-[.gitconfig](https://github.com/thisbetom/dotfiles/blob/master/.gitconfig) to see
+[.gitconfig](https://github.com/tfuertesha/dotfiles/blob/master/.gitconfig) to see
 various aliases and settings.
 
-Additional scripts (see [.scripts](https://github.com/thisbetom/dotfiles/tree/master/.scripts/) directory for source):
+Additional scripts (see [.scripts](https://github.com/tfuertesha/dotfiles/tree/master/.scripts/) directory for source):
 
 * git-publish-branch
 * git-rank-contributors
