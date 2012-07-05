@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark 
 syntax on
-colorscheme badwolf
+colorscheme molokai
 
 " Enabled later, after Pathogen
 filetype off
@@ -16,7 +16,9 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+if version > 702
+  set undodir=~/.vim/undo
+endif
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
@@ -79,7 +81,9 @@ set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.br
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
-set undofile " Persistent Undo.
+if version > 702
+  set undofile " Persistent Undo.
+endif
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -216,9 +220,17 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+<<<<<<< HEAD
+if version > 702
+  " Set relative line numbers
+  set relativenumber " Use relative line numbers. Current line is still in status bar.
+  au BufReadPost * set relativenumber
+endif
+=======
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
 au BufReadPost,BufNewFile * set relativenumber
+>>>>>>> fd56bf9d58c6a84924e4cea13c9a255d9b753552
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
@@ -268,6 +280,7 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 
+<<<<<<< HEAD
 " Taglist Plus
 let Tlist_WinWidth='auto'
 nnoremap <leader>l :TlistToggle<CR>
@@ -294,3 +307,6 @@ au BufRead,BufNewFile *.py set ft=python.django syntax=python.django
 au BufRead,BufNewFile *.html set ft=htmldjango.html syntax=htmldjango.html
 " autocmd FileType python set ft=python.django " For SnipMate
 " autocmd FileType html set ft=htmldjango.html " For SnipMate
+
+=======
+>>>>>>> fd56bf9d58c6a84924e4cea13c9a255d9b753552

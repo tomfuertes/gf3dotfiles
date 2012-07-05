@@ -62,7 +62,7 @@ function gs() {
   fi
 }
 
-alias gup="gg ~/sandbox/git-repos/*; brew update && brew upgrade"
+alias gup="gg ~/sandbox/git-repos/*; cd ~/.dotfiles && git pull && git pull thisbetom master && git pull gf3 master && cd -; brew update && brew upgrade"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 alias smush='python ~/sandbox/git-repos/smush.py/smush.py -r -s'

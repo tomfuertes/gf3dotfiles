@@ -55,3 +55,21 @@
 [submodule ".vim/bundle/handlebars.vim"]
 	path = .vim/bundle/handlebars.vim
 	url = git://github.com/nono/vim-handlebars.git
+[submodule ".vim/bundle/nerdcommenter.vim"]
+	path = .vim/bundle/nerdcommenter.vim
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/rails.vim"]
+	path = .vim/bundle/rails.vim
+	url = git://github.com/tpope/vim-rails.git
+[submodule ".vim/bundle/repeat.vim"]
+	path = .vim/bundle/repeat.vim
+	url = git://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/surround.vim"]
+	path = .vim/bundle/surround.vim
+	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
