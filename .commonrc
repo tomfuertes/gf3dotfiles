@@ -13,7 +13,7 @@ if [ -d ~/.scripts ] ; then
 fi
 
 # Misc settings
-export EDITOR=vim
+export EDITOR='subl -w'
 
 # rbenv
 if [ -d "$HOME/.rbenv/bin" ] ; then 
