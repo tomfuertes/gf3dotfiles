@@ -1,4 +1,4 @@
-set editing-mode vi
+set -o emacs set editing-mode emacs
 tab: complete
 set completion-ignore-case on
 set blink-matching-paren on
