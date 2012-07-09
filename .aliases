@@ -64,7 +64,7 @@ alias brup="brew update && brew upgrade"
 alias gup="echo '*** Pulling git-repos/* ***'; gg ~/sandbox/git-repos/*; echo '*** Pulling ~/.dotfiles ***'; gupdot; echo '*** Brew Up ***'; brup"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
-alias smush='python ~/sandbox/git-repos/smush.py/smush.py -r -s'
+alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
 
 alias resetaudio='sudo killall coreaudiod'
 
