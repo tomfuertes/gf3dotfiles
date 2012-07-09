@@ -31,8 +31,8 @@ alias jr='j -t rank'
 
 
 # # t
-alias t='python ~/sandbox/git-repos/t/t.py --task-dir ~/Documents/todos --list ztodo.txt'
-alias q='python ~/sandbox/git-repos/t/t.py --task-dir ~/Documents/todos --list zquestions.txt'
+alias t='python ~/sandbox/git-repos/t/t.py --task-dir ~/Dropbox/todos --list ztodo.txt'
+alias q='python ~/sandbox/git-repos/t/t.py --task-dir ~/Dropbox/todos --list zquestions.txt'
 
 # Git Repos
 function gg() {
@@ -59,9 +59,9 @@ function gs() {
   fi
 }
 
-alias gupdot="cd ~/.dotfiles && git pull && git pull thisbetom master && git pull gf3 master && cd -"
+alias gupdot="cd ~/.dotfiles && git pull && cd -"
 alias brup="brew update && brew upgrade"
-alias gup="gg ~/sandbox/git-repos/*; echo '*** Pulling ~/.dotfiles'; gupdot; echo '*** Brew Up'; brup"
+alias gup="echo '*** Pulling git-repos/*'; gg ~/sandbox/git-repos/*; echo '*** Pulling ~/.dotfiles'; gupdot; echo '*** Brew Up'; brup"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 alias smush='python ~/sandbox/git-repos/smush.py/smush.py -r -s'
