@@ -3,6 +3,8 @@
   email = tomfuertes@gmail.com
 [github]
   user = tomfuertes
+[credential]
+  helper = osxkeychain
 [core]
   # excludesfile = /Users/tfuertes/.gitignore  
   # autocrlf = true
