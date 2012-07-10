@@ -31,8 +31,9 @@ alias jr='j -t rank'
 
 
 # # t
-alias t='python ~/sandbox/git-repos/t/t.py --task-dir ~/Dropbox/todos --list ztodo.txt'
-alias q='python ~/sandbox/git-repos/t/t.py --task-dir ~/Dropbox/todos --list zquestions.txt'
+alias t='python ~/sandbox/git-repos/today/today.py --task-dir ~/Dropbox/todos --list ztodo.txt'
+alias q='python ~/sandbox/git-repos/today/today.py --task-dir ~/Dropbox/todos --list zquestions.txt'
+
 
 # Git Repos
 function gg() {
