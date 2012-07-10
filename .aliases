@@ -60,6 +60,18 @@ function gs() {
   fi
 }
 
+function gz() {
+  if [ $# -gt 0 ]; then
+    for i in $(echo $*); do
+      if [ -d ${i} ]; then
+        ( echo "*** Tarring into ~/Dropbox/backups/ -- " ${i} " -- ***" && tar zvcf ~/Dropbox/backups/$(date +"%F").${i}.tgz ${i} )
+      fi
+    done
+  else
+    echo "usage: gz <dir name>"
+  fi
+}
+
 alias gupdot="cd ~/.dotfiles && git pull && cd -"
 alias brup="brew update && brew upgrade"
 alias gup="echo '*** Pulling git-repos/* ***'; gg ~/sandbox/git-repos/*; echo '*** Pulling ~/.dotfiles ***'; gupdot; echo '*** Brew Up ***'; brup"
