@@ -72,7 +72,7 @@ function gz() {
   fi
 }
 
-alias gupdot="cd ~/.dotfiles && git pull && cd -"
+alias gupdot="cd ~/.dotfiles && git pull | grep -v 'Already up-to-date.' && cd - > /dev/null"
 alias brup="brew update && brew upgrade"
 alias gup="echo '*** Pulling git-repos/* ***'; gg ~/sandbox/git-repos/*; echo '*** Pulling ~/.dotfiles ***'; gupdot; echo '*** Brew Up ***'; brup"
 alias gst="gs ~/sandbox/git-repos/*"
