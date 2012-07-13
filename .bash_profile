@@ -16,3 +16,7 @@ NODE_PATH="/usr/local/lib/node_modules"
 
 # Common junk
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+. `brew --prefix`/etc/bash_completion
+fi
