@@ -12,6 +12,8 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/share/python/virtualenvwrapper.sh
 
+. `brew --prefix`/etc/profile.d/z.sh
+
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # Common junk

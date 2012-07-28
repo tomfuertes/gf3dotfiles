@@ -22,9 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/racket/bin:$PATH
-
-# Android SDK
-export PATH=$PATH:/Users/gianni/Projects/java/android-sdk-mac_x86/tools
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Common junk
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
