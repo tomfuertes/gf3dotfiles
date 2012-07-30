@@ -1,15 +1,15 @@
 # --- Functions --- #
 # Notice title
-function notice { echo  "\033[1;32m=> $1\033[0m"; }
+function notice { echo  "### $1 ###"; }
 
 # Error title
-function error { echo "\033[1;31m=> Error: $1\033[0m"; }
+function error { echo "### Error: ###"; }
 
 # List item
-function c_list { echo  "  \033[1;32m✔\033[0m $1"; }
+function c_list { echo  "  ✔✔✔ $1"; }
 
 # Error list item
-function e_list { echo  "  \033[1;31m✖\033[0m $1"; }
+function e_list { echo  "  ✖✖✖ $1"; }
 
 # Check for dependency
 function dep {
