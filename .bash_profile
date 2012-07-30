@@ -7,13 +7,17 @@ fi
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
+# Brew Path
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH"
 
+# VirtualEnvWrapper
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/share/python/virtualenvwrapper.sh
 
+# z.sh
 . `brew --prefix`/etc/profile.d/z.sh
 
+# Node
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # Common junk
