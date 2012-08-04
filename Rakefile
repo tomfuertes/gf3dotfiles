@@ -40,20 +40,20 @@ namespace :install do
   desc 'Check for and install required dependencies.'
   task :deps do
     puts 'Please install bundler and re-run installation. http://gembundler.com/' and exit 1 unless system 'which bundle'
-    system 'bundle install'
+    system 'bundle install | grep -v "^Using" | grep -v "Your bundle is complete"'
   end
 
   desc 'Copy dotfiles over to home dir.'
   task :copy do
     entries.each do | file |
-      FileUtils.cp_r file, File.expand_path( "~/#{file}" ), :verbose => true, :remove_destination => true
+      FileUtils.cp_r file, File.expand_path( "~/#{file}" ), :verbose => false, :remove_destination => true
     end
   end
 
   desc 'Run post-install tasks.'
   task :post do
-    puts "\n\n\n##################################################"
-    puts "Don't forget to edit your git config: ~/.gitconfig"
+    # puts "\n\n\n##################################################"
+    # puts "Don't forget to edit your git config: ~/.gitconfig"
   end
 
 end
