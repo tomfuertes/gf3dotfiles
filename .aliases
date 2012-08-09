@@ -63,11 +63,11 @@ function gz() {
   fi
 }
 
-alias gupdot=". ~/.dotfiles/bootstrap.sh"
+alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade"
 alias sup="svn up ~/sandbox/svn-repos/*"
-alias gup="gg ~/sandbox/git-repos/*;"
-alias up="echo '*** Pulling git-repos/* ***'; gup; echo '*** Pulling svn-repos/* ***'; sup; echo '*** Pulling ~/.dotfiles ***'; gupdot; echo '*** Brew Up ***'; brup"
+alias gup="gg ~/sandbox/git-repos/*"
+alias up="echo '### Pulling git-repos/* ###'; gup; echo '### Pulling svn-repos/* ###'; sup; echo '### Pulling ~/.dotfiles ###'; dup; echo '### Brew Up ###'; brup"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
