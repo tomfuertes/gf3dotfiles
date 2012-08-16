@@ -64,7 +64,7 @@ function gz() {
 }
 
 alias dup=". ~/.dotfiles/bootstrap.sh"
-alias brup="brew update && brew upgrade --use-gcc -vd"
+alias brup="brew update && brew upgrade"
 alias sup="svn up ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
 alias up="echo '### Pulling git-repos/* ###'; gup; echo '### Pulling svn-repos/* ###'; sup; echo '### Pulling ~/.dotfiles ###'; dup; echo '### Brew Up ###'; brup"
