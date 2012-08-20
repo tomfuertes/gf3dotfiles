@@ -25,6 +25,9 @@ alias vp="vim -p"
 # J = Z
 alias j="z"
 
+# t
+alias j="subl ~/Dropbox/todo.txt"
+
 # Git Repos
 function gg() {
   if [ $# -gt 0 ]; then
