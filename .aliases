@@ -26,7 +26,8 @@ alias vp="vim -p"
 alias j="z"
 
 # t
-alias t="subl ~/Dropbox/todo.txt"
+alias todo="subl ~/Dropbox/todo.txt"
+alias t="todo.sh"
 
 # Git Repos
 function gg() {
