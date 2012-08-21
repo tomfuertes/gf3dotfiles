@@ -1,6 +1,8 @@
 Installation
 ============
 
+These are heavily modified from the forked [gf3/dotfiles](https://github.com/gf3/dotfiles) and less friendly/documented.  If you happen upon this repo, try gf3's first instead and/or explore at your own risk! :)
+
 Prerequisites
 -------------
 
