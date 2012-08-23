@@ -35,7 +35,7 @@ function gg() {
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
         ( echo '*** Pulling' ${i} && cd ${i} && git pull | grep -v "Already up-to-date." )
-        ( cd ${i} && git cherry -v origin/master && git status -s )
+        ( cd ${i} && git cherry -v origin && git status -s )
       fi
     done
   else
@@ -47,7 +47,7 @@ function gs() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
-        ( echo '***' ${i} && cd ${i} && git cherry -v origin/master && git status -s )
+        ( echo '***' ${i} && cd ${i} && git cherry -v origin && git status -s )
       fi
     done
   else
