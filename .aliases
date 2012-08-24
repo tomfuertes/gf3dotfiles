@@ -27,7 +27,11 @@ alias j="z"
 
 # t
 alias todo="subl ~/Dropbox/todo.txt"
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
 alias t="todo.sh"
+# Note: If you define an alias (e.g. t) to todo.sh, you need to explicitly enable completion for it, too (also put this into your .bashrc):
+complete -F _todo t
 
 # Git Repos
 function gg() {
