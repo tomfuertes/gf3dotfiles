@@ -71,6 +71,12 @@ function gz() {
   fi
 }
 
+# function ascifix() {
+#   find . -type f | xargs perl -pi -e 's/\“/\"/g';
+#   find . -type f | xargs perl -pi -e 's/\”/\"/g';
+#   find . -type f | xargs perl -pi -e "s/\’/\'/g";
+# }
+
 alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade"
 alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
