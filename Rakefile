@@ -39,8 +39,8 @@ namespace :install do
 
   desc 'Check for and install required dependencies.'
   task :deps do
-    puts 'Please install bundler and re-run installation. http://gembundler.com/' and exit 1 unless system 'which bundle'
-    system 'bundle install | grep -v "^Using" | grep -v "Your bundle is complete"'
+    # puts 'Please install bundler and re-run installation. http://gembundler.com/' and exit 1 unless system 'which bundle'
+    # system 'bundle install | grep -v "^Using" | grep -v "Your bundle is complete"'
   end
 
   desc 'Copy dotfiles over to home dir.'
