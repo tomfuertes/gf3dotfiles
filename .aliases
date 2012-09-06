@@ -37,7 +37,7 @@ function gg() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
-        ( echo -e '\e[00;34m***\e[00m Pulling' ${i} '\e[00;34m***\e[00m' && cd ${i} && git pull | grep -v "Already up-to-date." )
+        ( echo -e '\e[01;34m*** Pulling' ${i} '***\e[00m' && cd ${i} && git pull | grep -v "Already up-to-date." )
         ( cd ${i} && git cherry -v origin && git status -s )
       fi
     done
@@ -80,7 +80,7 @@ alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade"
 alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
-alias up="echo '### Pulling git-repos/* ###'; gup; echo '### Pulling/Status svn-repos/* ###'; sup; echo '### Pulling ~/.dotfiles ###'; dup; echo '### Brew Up ###'; brup"
+alias up="echo -e '\e[01;32m### Pulling git-repos/* ###\e[00m'; gup; echo -e '\e[01;32m### Pulling/Status svn-repos/* ###\e[00m'; sup; echo -e '\e[01;32m### Pulling ~/.dotfiles ###\e[00m'; dup; echo -e '\e[01;32m### Brew Up ###\e[00m'; brup"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
