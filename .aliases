@@ -62,7 +62,7 @@ function gz() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i} ]; then
-        ( echo "*** Tarring into ~/Dropbox/backups/ -- " ${i} " -- ***" && tar zvcf ~/Dropbox/backups/$(date +"%F").${i}.tgz ${i} )
+        ( echo "*** Tarring into ~/sandbox/backups/ -- " ${i} " -- ***" && tar zcf ~/sandbox/backups/$(date +"%F").${i}.tgz ${i} )
       fi
     done
   else
