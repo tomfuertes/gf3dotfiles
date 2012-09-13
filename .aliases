@@ -78,7 +78,7 @@ function gz() {
 
 alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade"
-alias nup="curl http://npmjs.org/install.sh | sh; npm update -g"
+alias nup="curl https://npmjs.org/install.sh | sh; npm update -g"
 alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
 alias up="echo -e '\e[01;32m### Pulling git-repos/* ###\e[00m'; gup; echo -e '\e[01;32m### Pulling/Status svn-repos/* ###\e[00m'; sup; echo -e '\e[01;32m### Pulling ~/.dotfiles ###\e[00m'; dup; echo -e '\e[01;32m### Brew Up ###\e[00m'; brup"
