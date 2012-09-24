@@ -8,7 +8,7 @@ export HISTFILESIZE=10000
 export HISTSIZE=10000
 
 # Brew Path
-PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH"
 
 # VirtualEnvWrapper
 export WORKON_HOME=$HOME/.virtualenvs
