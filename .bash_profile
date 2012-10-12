@@ -18,7 +18,7 @@ source /usr/local/share/python/virtualenvwrapper.sh
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Node
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH="/usr/local/share/npm/bin:/usr/local/lib/node_modules"
 
 # Common junk
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
