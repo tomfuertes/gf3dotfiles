@@ -28,7 +28,7 @@ have ruby and ruby gems installed on your system: `gem install rake bundler`.
 Then:
 
 ``` bash-session
-$ zsh < <( curl https://raw.github.com/tomfuertes/dotfiles/master/bootstrap.sh )
+$ zsh < <( curl https://raw.github.com/tomfuertes/gf3dotfiles/master/bootstrap.sh )
 ```
 
 Don't worry, all your old files will be backed up!
@@ -155,14 +155,14 @@ Shell
 =====
 
 Most of the shell junk is setup to work in both zsh and bash. Bash users should
-see [.bash_profile](https://github.com/tomfuertes/dotfiles/blob/master/.bash_profile)
-and [.bash_prompt](https://github.com/tomfuertes/dotfiles/blob/master/.bash_prompt).
+see [.bash_profile](https://github.com/tomfuertes/gf3dotfiles/blob/master/.bash_profile)
+and [.bash_prompt](https://github.com/tomfuertes/gf3dotfiles/blob/master/.bash_prompt).
 
 
 Aliases
 -------
 
-Check out [.aliases](https://github.com/tomfuertes/dotfiles/blob/master/.aliases)
+Check out [.aliases](https://github.com/tomfuertes/gf3dotfiles/blob/master/.aliases)
 
 
 Scripts
@@ -184,10 +184,10 @@ Git
 
 I've included some handy git script additions as well as configution changes.
 Have a look at
-[.gitconfig](https://github.com/tomfuertes/dotfiles/blob/master/.gitconfig) to see
+[.gitconfig](https://github.com/tomfuertes/gf3dotfiles/blob/master/.gitconfig) to see
 various aliases and settings.
 
-Additional scripts (see [.scripts](https://github.com/tomfuertes/dotfiles/tree/master/.scripts/) directory for source):
+Additional scripts (see [.scripts](https://github.com/tomfuertes/gf3dotfiles/tree/master/.scripts/) directory for source):
 
 * git-publish-branch
 * git-rank-contributors
