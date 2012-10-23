@@ -64,3 +64,5 @@
   tool = Kaleidoscope
 [diff "exif"]
   textconv = exiftool
+[push]
+  default = simple
