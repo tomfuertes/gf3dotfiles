@@ -26,3 +26,5 @@ export NODE_PATH="/usr/local/share/npm/bin:/usr/local/lib/node_modules"
 if [ -f `brew --prefix`/etc/bash_completion ]; then
 . `brew --prefix`/etc/bash_completion
 fi
+
+__git_complete g __git_main
