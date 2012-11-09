@@ -71,7 +71,7 @@ else
   # --- Install --- #
   notice "Installing"
   cd ~/.dotfiles
-  rake backup
+  # rake backup
   rake install
 fi
 
