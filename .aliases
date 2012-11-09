@@ -38,7 +38,7 @@ function gg() {
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
         ( echo -e '\e[01;34m*** Pulling' ${i} '***\e[00m' && cd ${i} && git pull | grep -v "Already up-to-date." )
-        ( cd ${i} && git cherry -v origin && git status -s )
+        ( cd ${i} && git status -s )
       fi
     done
   else
