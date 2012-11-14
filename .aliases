@@ -76,6 +76,8 @@ function gz() {
 #   find . -type f | xargs perl -pi -e "s/\’/\'/g";
 # }
 
+alias pss="sudo python -m SimpleHTTPServer 80"
+
 alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade"
 alias nup="npm update -gq"
