@@ -27,4 +27,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 . `brew --prefix`/etc/bash_completion
 fi
 
+export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
+export MVN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
+
 __git_complete g __git_main
