@@ -32,3 +32,5 @@ export MVN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export GIT_SSH=/usr/bin/ssh
 
 __git_complete g __git_main
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
