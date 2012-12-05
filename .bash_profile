@@ -29,5 +29,6 @@ fi
 
 export MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
 export MVN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'
+export GIT_SSH=/usr/bin/ssh
 
 __git_complete g __git_main
