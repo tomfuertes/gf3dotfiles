@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
-alias ll='tree --dirsfirst -ChFupDaLg 1'
+alias ll='tree --dirsfirst -ChFupDaL 1'
 
 # Utilities
 alias a="ack -ia"
