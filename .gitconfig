@@ -66,3 +66,5 @@
   textconv = exiftool
 [push]
   default = simple
+[branch]
+  autosetuprebase = local
