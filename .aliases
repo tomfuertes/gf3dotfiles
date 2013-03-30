@@ -86,7 +86,8 @@ alias gup="gg ~/sandbox/git-repos/*"
 alias up="echo -e '\e[01;32m### Pulling git-repos/* ###\e[00m'; gup; echo -e '\e[01;32m### Pulling/Status svn-repos/* ###\e[00m'; sup; echo -e '\e[01;32m### Pulling ~/.dotfiles ###\e[00m'; dup; echo -e '\e[01;32m### Brew Up ###\e[00m'; brup; echo -e '\e[01;32m### NPM Up ###\e[00m'; nup"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
-alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
+# rec: https://github.com/colorhook/node-smushit
+# alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
 
 alias resetaudio='sudo killall coreaudiod'
 
