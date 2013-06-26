@@ -34,3 +34,5 @@ export GIT_SSH=/usr/bin/ssh
 __git_complete g __git_main
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+eval "$(grunt --completion=bash)"
