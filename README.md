@@ -6,15 +6,15 @@ These are heavily modified from the forked [gf3/dotfiles](https://github.com/gf3
 Prerequisites
 -------------
 
-* Git (1.7+)
-* Mercurial (1.6+)
-* Ruby (1.9 recommended) and RubyGems
-* Vim (7.3+)
+* Git (1.8+ recommended)
+* Mercurial (1.6+ recommended)
+* Vim (7.3+ recommended)
 * Tree
+* Pygments
+* xmllint
 
 Optional, but recommended:
 
-* ZSH
 * [rbenv](http://rbenv.org) or [RVM](http://rvm.beginrescueend.com/)
 * [Homebrew](http://mxcl.github.com/homebrew/) (OS X only)
 
@@ -22,13 +22,11 @@ Optional, but recommended:
 Bootstrapper
 ------------
 
-The bootstrapper depends on three things: ruby, rake, and bundler. Assuming you
-have ruby and ruby gems installed on your system: `gem install rake bundler`.
-
-Then:
+The bootstrapper will back up all your existing files before it installs
+anything new, it'll also warn you if a dependency isn't met.
 
 ``` bash-session
-$ zsh < <( curl https://raw.github.com/tomfuertes/gf3dotfiles/master/bootstrap.sh )
+$ bash < <( curl https://raw.github.com/tomfuertes/gf3dotfiles/master/bootstrap.sh )
 ```
 
 Don't worry, all your old files will be backed up!
@@ -58,6 +56,10 @@ Reference to vim mappings.
 
 ### General
 
+* `,a=` Tabularize on assignment (=)
+* `,a=>` Tabularize on hash rocket keys (=>)
+* `,a:` Tabularize on hash/object/dict keys (:)
+* `,a,` Tabularize on comma (,)
 * `,c` Toggle invisibles.
 * `,ls` Show buffers (same as `:buffers`).
 * `,p` Toggle paste mode.
@@ -95,17 +97,11 @@ As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageU
 * `^l` Go to split right.
 
 
-### Markdown
-
-* `,mp` Preview markdown buffer with Github styles.
-* `,mf` Render markdown buffer to html in a file.
-* `,mt` Render markdown buffer to html in a tab.
-
-
 Commands
 ========
 
 * `:W` Alias to `:w` because I'm always typing it.
+* `:R` Get the output of shell commands.
 
 
 Plugins
@@ -123,13 +119,12 @@ Installed plugins and syntax files.
 * Gist
 * Haml
 * Handlebars
-* Histwin
+* Indent Guides
 * Jade
 * Javascript
 * Markdown
 * Nerdcommenter
 * Nu
-* Pastie
 * Powerline
 * Pathogen
 * Racket
@@ -137,6 +132,7 @@ Installed plugins and syntax files.
 * Rainbow Parenthesis
 * Repeat
 * Ruby
+* Scala
 * Slim
 * Snipmate
 * Stylus
@@ -172,6 +168,7 @@ Additional useful scripts bundled:
 
 * ack
 * bookmarklet
+
 
 Fonts
 =====
@@ -210,4 +207,6 @@ Sensible configurations exist for:
 * TMUX
 * Vim
 * GVim / MacVim
+
+...and more!
 

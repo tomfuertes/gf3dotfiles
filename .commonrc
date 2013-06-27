@@ -1,16 +1,25 @@
 # Load things
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
+[[ -f "$HOME/.functions" ]] && source "$HOME/.functions"
 
 # Adjust $PATH
-if [ -d ~/.scripts ] ; then
-  export PATH=$HOME/.scripts:$PATH
-fi
+[[ -d "$HOME/.scripts" ]] && export PATH=$HOME/.scripts:$PATH
+
+[[ -d "$HOME/.lein/bin" ]] && export PATH=$HOME/.lein/bin:$PATH
+
+# Locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Misc settings
-export EDITOR='subl -w'
+export EDITOR=vim
+
+# rbenv
+if [ -d "$HOME/.rbenv/bin" ] ; then
+  export PATH="$HOME/.rbenv/bin":$PATH
+  eval "$(rbenv init -)"
+fi
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

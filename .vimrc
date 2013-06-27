@@ -3,9 +3,9 @@ set nocompatible
 
 " Set syntax highlighting options.
 set t_Co=256
-set background=dark 
+set background=dark
 syntax on
-colorscheme badwolf
+colorscheme molotov
 
 " Enabled later, after Pathogen
 filetype off
@@ -17,6 +17,7 @@ let mapleader=","
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
+
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
@@ -30,7 +31,6 @@ set expandtab " Expand tabs to spaces
 set foldcolumn=4 " Column to show folds
 set foldenable
 set foldlevel=2
-" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
 set foldmethod=syntax " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
 set foldnestmax=3 " Set max fold nesting level
@@ -58,6 +58,7 @@ set magic " Enable extended regexes.
 set mouse=a " Enable moouse in all in all modes.
 set noerrorbells " Disable error bells.
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
+set noshowmode " Don't show the current mode (Powerline takes care of us)
 set nostartofline " Don't reset cursor to start of line when moving around.
 set nowrap " Do not wrap lines.
 set nu " Enable line numbers.
@@ -65,6 +66,7 @@ set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set report=0 " Show all changes.
 set ruler " Show the cursor position
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
+set shell=/bin/sh " Use /bin/sh for executing shell commands
 set shiftwidth=2 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
 set showmode " Show the current mode.
@@ -83,17 +85,24 @@ set undofile " Persistent Undo.
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
-" Status Line
-" hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
-" hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
-" set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
-let g:Powerline_symbols = 'fancy'
+" Powerline
+set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
+
+" Speed up transition from modes
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
@@ -113,6 +122,9 @@ map <C-L> <C-W>l
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
+
+" Get output of shell commands
+command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " Remap :W to :w
 command W w
@@ -145,13 +157,10 @@ if &term == "xterm-ipad"
   inoremap <Leader><Tab> <Tab>
 endif
 
-" Remap keys for auto-completion, disable arrow keys
-inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
-inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
+" Remap keys for auto-completion menu
+inoremap <expr> <CR>   pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>   pumvisible() ? "\<C-p>" : "\<Up>"
 
 " Indent/unident block (,]) (,[)
 nnoremap <leader>] >i{<CR>
@@ -210,6 +219,18 @@ map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
 
+" Jumping to tags. (via Steve Losh)
+"
+" Basically, <c-]> jumps to tags (like normal) and <c-\> opens the tag in a new
+" split instead.
+"
+" Both of them will align the destination line to the upper middle part of the
+" screen.  Both will pulse the cursor line so you can see where the hell you
+" are.  <c-\> will also fold everything in the buffer and then unfold just
+" enough for you to see the destination line.
+nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
+nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
+
 " Restore cursor position
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -219,10 +240,6 @@ autocmd BufReadPost *
 " Set relative line numbers
 set relativenumber " Use relative line numbers. Current line is still in status bar.
 au BufReadPost,BufNewFile * set relativenumber
-
-" Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
 
 " Markdown
 augroup mkd
@@ -241,31 +258,53 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 " Jade
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
-" Common Ruby files
+" Ruby
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
 " Nu
 au BufNewFile,BufRead *.nu,*.nujson,Nukefile setf nu
 
-" Coffee Folding
+" Coffee
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " ZSH
 au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
-" CtrlP
-let g:ctrlp_match_window_bottom = 0 " Show at top of window
-let g:ctrlp_working_path_mode = 2 " Smart path mode
-let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
-let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
-let g:ctrlp_split_window = 1 " <CR> = New Tab
+" Fish
+au BufRead,BufNewFile *.fish set ft=fish
+
+" XML
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
+" Highlight Custom C Types
+autocmd BufRead,BufNewFile *.[ch] let fname = expand('<afile>:p:h') . '/types.vim'
+autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
+autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
+autocmd BufRead,BufNewFile *.[ch] endif
 
 " Clojure.vim
 let g:vimclojure#ParenRainbow = 1 " Enable rainbow parens
 let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
 let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be indented as if they were included in the 'lispwords' option
 
-" Rainbow Parenthesis
+" CtrlP.vim
+let g:ctrlp_match_window_bottom = 0 " Show at top of window
+let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
+let g:ctrlp_split_window = 1 " <CR> = New Tab
+let g:ctrlp_open_new_file = 't' " Open newly created files in a new tab
+let g:ctrlp_open_multiple_files = 't' " Open multiple files in new tabs
+
+" Tabular.vim
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
+vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
+nmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
+vmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
+
+" RainbowParenthesis.vim
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 
 " Taglist Plus
@@ -294,3 +333,12 @@ au BufRead,BufNewFile *.py set ft=python.django syntax=python.django
 au BufRead,BufNewFile *.html set ft=htmldjango.html syntax=htmldjango.html
 " autocmd FileType python set ft=python.django " For SnipMate
 " autocmd FileType html set ft=htmldjango.html " For SnipMate
+
+" Ruby.vim
+let ruby_operators = 1
+let ruby_space_errors = 1
+let ruby_fold = 1
+
+" Emulate bundles, allow plugins to live independantly. Easier to manage.
+execute pathogen#infect()
+filetype plugin indent on
