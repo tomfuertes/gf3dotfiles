@@ -4,17 +4,17 @@
 # Functions
 #-----------------------------------------------------------------------------
 
-# Notice title
-notice() { echo  "\033[1;32m=> $1\033[0m"; }
+# Notice
+function notice { echo  "### Notice: $1 ###"; }
 
 # Error title
-error() { echo "\033[1;31m=> Error: $1\033[0m"; }
+function error { echo "### Error :( $1 ###"; }
 
 # List item
-c_list() { echo  "  \033[1;32m✔\033[0m $1"; }
+function c_list { echo  "  ✔ $1"; }
 
 # Error list item
-e_list() { echo  "  \033[1;31m✖\033[0m $1"; }
+function e_list { echo  "  ✖ $1"; }
 
 # Check for dependency
 dep() {
@@ -83,7 +83,7 @@ done
 
 if [ $not_met -gt 0 ]; then
   error "$not_met dependencies not met!"
-  exit 1
+  return 1
 fi
 
 
