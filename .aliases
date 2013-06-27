@@ -70,6 +70,18 @@ function gz() {
   fi
 }
 
+### http://chrisawren.com/posts/Advanced-Grunt-tooling ###
+# Install a grunt plugin and save to devDependencies
+function gi() {
+  npm install --save-dev grunt-"$@"
+}
+
+# Install a grunt-contrib plugin and save to devDependencies
+function gci() {
+  npm install --save-dev grunt-contrib-"$@"
+}
+### /http://chrisawren.com/posts/Advanced-Grunt-tooling ###
+
 # function ascifix() {
 #   find . -type f | xargs perl -pi -e 's/\“/\"/g';
 #   find . -type f | xargs perl -pi -e 's/\”/\"/g';
