@@ -8,9 +8,9 @@ export HISTSIZE=10000
 # Brew Path
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH"
 
-# VirtualEnvWrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/share/python/virtualenvwrapper.sh
+# # VirtualEnvWrapper
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/share/python/virtualenvwrapper.sh
 
 # z.sh
 . `brew --prefix`/etc/profile.d/z.sh

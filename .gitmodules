@@ -63,10 +63,10 @@
 	url = git://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/indent-guides.vim"]
 	path = .vim/bundle/indent-guides.vim
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule ".vim/bundle/scala.vim"]
 	path = .vim/bundle/scala.vim
-	url = git://github.com/derekwyatt/vim-scala.git
+	url = https://github.com/derekwyatt/vim-scala.git
 [submodule ".vim/bundle/powerline.vim"]
 	path = .vim/bundle/powerline.vim
 	url = git://github.com/Lokaltog/powerline.git
@@ -75,4 +75,4 @@
 	url = git://github.com/slim-template/vim-slim.git
 [submodule ".vim/bundle/tabular.vim"]
 	path = .vim/bundle/tabular.vim
-	url = git://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
