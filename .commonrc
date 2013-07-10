@@ -13,7 +13,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Misc settings
-export EDITOR=vim
+export EDITOR='subl -w'
 
 # HomeBrew path
 export PATH=$(brew --prefix ruby)/bin:$PATH
