@@ -130,7 +130,7 @@ function gci() {
 #   find . -type f | xargs perl -pi -e "s/\’/\'/g";
 # }
 
-alias pss="sudo python -m SimpleHTTPServer 80"
+alias pss="open http://localhost:8080 && python -m SimpleHTTPServer 8080"
 
 alias dup=". ~/.dotfiles/bootstrap.sh"
 alias brup="brew update && brew upgrade && brew prune && brew cleanup"
