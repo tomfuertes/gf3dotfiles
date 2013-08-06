@@ -28,6 +28,7 @@ alias j="z"
 
 # t
 alias todo="subl ~/Dropbox/todo.txt"
+alias apfm="subl ~/Dropbox/APFM/todo.txt"
 alias t="todo.sh"
 alias ts='t | grep -v LongTerm'
 # Enable alias completion
