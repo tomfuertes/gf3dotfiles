@@ -34,6 +34,9 @@ alias ts='t | grep -v LongTerm'
 # Enable alias completion
 complete -F _todo t
 
+# Forge
+alias forge="$HOME/Library/Trigger\ Toolkit/forge"
+
 # Git Repos
 function gg() {
   if [ $# -gt 0 ]; then
