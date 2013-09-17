@@ -18,6 +18,9 @@ export EDITOR='subl -w'
 # HomeBrew path
 export PATH=$(brew --prefix ruby)/bin:$PATH
 
+# Android Path
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 # rbenv
 if [ -d "$HOME/.rbenv/bin" ] ; then
   export PATH="$HOME/.rbenv/bin":$PATH
