@@ -63,22 +63,31 @@
 	url = git://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/indent-guides.vim"]
 	path = .vim/bundle/indent-guides.vim
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
 [submodule ".vim/bundle/scala.vim"]
 	path = .vim/bundle/scala.vim
-	url = https://github.com/derekwyatt/vim-scala.git
-[submodule ".vim/bundle/powerline.vim"]
-	path = .vim/bundle/powerline.vim
-	url = git://github.com/Lokaltog/powerline.git
+	url = git://github.com/derekwyatt/vim-scala.git
 [submodule ".vim/bundle/slim.vim"]
 	path = .vim/bundle/slim.vim
 	url = git://github.com/slim-template/vim-slim.git
 [submodule ".vim/bundle/tabular.vim"]
 	path = .vim/bundle/tabular.vim
-	url = https://github.com/godlygeek/tabular.git
+	url = git://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/markdown.vim"]
+	path = .vim/bundle/markdown.vim
+	url = git://github.com/tpope/vim-markdown.git
 [submodule ".vim/bundle/misc.vim"]
 	path = .vim/bundle/misc.vim
 	url = https://github.com/xolox/vim-misc.git
 [submodule ".vim/bundle/notes.vim"]
 	path = .vim/bundle/notes.vim
 	url = https://github.com/xolox/vim-notes.git
+[submodule ".vim/bundle/airline.vim"]
+	path = .vim/bundle/airline.vim
+	url = https://github.com/bling/vim-airline.git
+[submodule ".vim/bundle/fugitive.vim"]
+	path = .vim/bundle/fugitive.vim
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/syntastic.vim"]
+	path = .vim/bundle/syntastic.vim
+	url = https://github.com/scrooloose/syntastic.git

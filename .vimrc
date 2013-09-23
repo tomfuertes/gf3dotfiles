@@ -58,7 +58,7 @@ set magic " Enable extended regexes.
 set mouse=a " Enable moouse in all in all modes.
 set noerrorbells " Disable error bells.
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
-set noshowmode " Don't show the current mode (Powerline takes care of us)
+set noshowmode " Don't show the current mode (airline.vim takes care of us)
 set nostartofline " Don't reset cursor to start of line when moving around.
 set nowrap " Do not wrap lines.
 set nu " Enable line numbers.
@@ -69,7 +69,6 @@ set scrolloff=3 " Start scrolling three lines before horizontal border of window
 set shell=/bin/sh " Use /bin/sh for executing shell commands
 set shiftwidth=2 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
-set showmode " Show the current mode.
 set showtabline=2 " Always show tab bar.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
@@ -90,9 +89,6 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
-
-" Powerline
-set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
 
 " Speed up transition from modes
 if ! has('gui_running')
@@ -231,6 +227,18 @@ imap <PageDown> <C-O><C-D>
 nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
 nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
 
+" Word processor mode (:WP)
+func! WordProcessorMode()
+  setlocal formatoptions=t1
+  setlocal textwidth=100
+  map j gj
+  map k gk
+  setlocal smartindent
+  setlocal spell spelllang=en_ca
+  setlocal noexpandtab
+endfu
+com! WP call WordProcessorMode()
+
 " Restore cursor position
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -282,6 +290,10 @@ autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
 autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
 autocmd BufRead,BufNewFile *.[ch] endif
 
+" Airline.vim
+let g:airline_powerline_fonts = 1
+let g:airline_enable_syntastic = 1
+
 " Clojure.vim
 let g:vimclojure#ParenRainbow = 1 " Enable rainbow parens
 let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
@@ -293,6 +305,9 @@ let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
 let g:ctrlp_split_window = 1 " <CR> = New Tab
 let g:ctrlp_open_new_file = 't' " Open newly created files in a new tab
 let g:ctrlp_open_multiple_files = 't' " Open multiple files in new tabs
+
+" Markdown.vim
+let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'css', 'erb=eruby.html', 'bash=sh']
 
 " Notes.vim
 let g:notes_directories = ['~/Dropbox/Notes']
@@ -342,6 +357,12 @@ let ruby_operators = 1
 let ruby_space_errors = 1
 let ruby_fold = 1
 
+" Syntastic.vim
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_coffee_coffeelint_args = '-f /Users/gianni/.coffeelint.json'
+
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 execute pathogen#infect()
 filetype plugin indent on
+
