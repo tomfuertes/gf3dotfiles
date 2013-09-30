@@ -8,6 +8,9 @@ export HISTSIZE=10000
 # Brew Path
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 
+# PYTHONPATH
+export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH"
+
 # # VirtualEnvWrapper
 # export WORKON_HOME=$HOME/.virtualenvs
 # source /usr/local/share/python/virtualenvwrapper.sh
