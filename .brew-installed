@@ -63,6 +63,7 @@ redis
 rlog
 ruby
 s3cmd
+scons
 serf
 sqlite
 the_silver_searcher
