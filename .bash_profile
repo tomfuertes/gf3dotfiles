@@ -12,8 +12,8 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH"
 
 # # VirtualEnvWrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# source /usr/local/share/python/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 
 # z.sh
 . `brew --prefix`/etc/profile.d/z.sh
