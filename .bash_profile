@@ -6,7 +6,7 @@ export HISTFILESIZE=10000
 export HISTSIZE=10000
 
 # Brew Path
-PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+PATH="/usr/local/bin:~/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 
 # PYTHONPATH
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH"
