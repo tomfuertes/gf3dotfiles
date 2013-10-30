@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # About Sublime 3 Project Files: 
 # http://www.sublimetext.com/docs/3/projects.html
