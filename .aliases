@@ -39,12 +39,25 @@ complete -F _todo t
 # Forge
 alias forge="$HOME/Library/Trigger\ Toolkit/forge"
 
+### NOTICES ###
+# Notice title
+notice() { echo -e "\033[1;32m=> $1\033[0m"; }
+# Notice title
+msg() { echo -e "\033[1;34m=> $1\033[0m"; }
+# Error title
+error() { echo -e "\033[1;31m=> Error: $1\033[0m"; }
+# List item
+c_list() { echo -e "  \033[1;32m✔\033[0m $1"; }
+# Error list item
+e_list() { echo -e "  \033[1;31m✖\033[0m $1"; }
+
+
 # Git Repos
 function gg() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
-        ( echo -e '\e[01;34m*** Pulling' ${i} '***\e[00m' && cd ${i} && git pull | grep -v "Already up-to-date." )
+        ( msg "Pulling ${i}" && cd ${i} && git pull | grep -v "Already up-to-date." )
         ( cd ${i} && git status -s )
       fi
     done
@@ -57,7 +70,7 @@ function gs() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i}/.git ]; then
-        ( echo -e '\e[01;34m***Status' ${i} '***\e[00m' && cd ${i}; git cherry -v origin/master | wc -l | grep -v ' 0'; git status -s )
+        ( msg "Status ${i}" && cd ${i}; git cherry -v origin/master | wc -l | grep -v ' 0'; git status -s )
       fi
     done
   else
@@ -69,7 +82,7 @@ function gz() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
       if [ -d ${i} ]; then
-        ( echo "*** Tarring into ~/sandbox/backups/${i%/}.$(date "+%Y-%m-%d-%H-%M-%S").tgz ***" && tar zcf ~/sandbox/backups/${i%/}.$(date "+%Y-%m-%d-%H-%M-%S").tgz ${i%/} )
+        ( msg "Tarring into ~/sandbox/backups/${i%/}.$(date "+%Y-%m-%d-%H-%M-%S").tgz" && tar zcf ~/sandbox/backups/${i%/}.$(date "+%Y-%m-%d-%H-%M-%S").tgz ${i%/} )
       fi
     done
   else
@@ -144,12 +157,18 @@ alias brup="brew update && brew upgrade && brew prune && brew cleanup"
 alias nup="npm update -gq"
 # alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
-alias up="echo -e '\e[01;32m### Pulling git-repos/* ###\e[00m'; gup; \
-  echo -e '\e[01;32m### Brew Up ###\e[00m'; brup; \
-  echo -e '\e[01;32m### NPM Up ###\e[00m'; nup; \
-  echo -e '\e[01;32m### Gem Update ###\e[00m'; gemup; \
-  echo -e '\e[01;32m### Pulling ~/.dotfiles ###\e[00m'; dup; \
-  "
+alias up="\
+  notice 'Pulling git-repos/*'; \
+  gup; \
+  notice 'Brew Up'; \
+  brup; \
+  notice 'NPM Up'; \
+  nup; \
+  notice 'Gem Update'; \
+  gemup; \
+  notice 'Pulling ~/.dotfiles'; \
+  dup; \
+"
 alias gst="gs ~/sandbox/git-repos/*"
 alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
 # rec: https://github.com/colorhook/node-smushit
