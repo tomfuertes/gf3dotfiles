@@ -1,5 +1,6 @@
 #!/bin/bash
  
+# wget https://gist.github.com/dsandstrom/5753864/raw/subl
 if [ "$#" -eq "0" ] ; then
   for file in *sublime-project
   do
@@ -7,17 +8,17 @@ if [ "$#" -eq "0" ] ; then
       # if no arguments, find if there is a project file in the current directory
       filename="${file%.*}"
       echo "Opening project: $filename"
-      /opt/sublime_text_2/sublime_text --class=sublime-text-2 -n $file &
+      /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n $file &
       exit 0
-    else
-      # if no project file, just open the current directory
-      echo "Opening current directory"
-      /opt/sublime_text_2/sublime_text --class=sublime-text-2 -n . &
-      exit 0
+    # else
+    #   # if no project file, just open the current directory
+    #   echo "Opening current directory"
+    #   /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n "$a" &
+    #   exit 0
     fi
   done
 fi
 
 # if arguments given, run as normal
-/opt/sublime_text_2/sublime_text --class=sublime-text-2 "$@" -n
+/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $@
 exit 0
