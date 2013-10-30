@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# Looks for and opens *.sublime-project in dir of singular argument
-#   else falls back to standard `subl` call.
-#   adapted from https://gist.github.com/dsandstrom/5753864
+# About Sublime 3 Project Files: 
+# http://www.sublimetext.com/docs/3/projects.html
+
+# About This Script: 
+#   Looks for and opens *.sublime-project in dir of singular argument
+#     else falls back to standard `subl` call.
+#   Works with default sublime 3 install on mavericks.
+#   Adapted from: https://gist.github.com/dsandstrom/5753864
 if [ "$#" -eq "1" ] && [ -d "$1" ] ; then
   for file in ${1%/}/*.sublime-project
   do
