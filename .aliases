@@ -28,6 +28,9 @@ alias vp="vim -p"
 # J = Z
 alias j="z"
 
+# rsync
+alias r="rsync -avuzbP --exclude '*~'"
+
 # t
 alias todo="subl ~/Dropbox/todo.txt"
 alias apfm="subl ~/Dropbox/APFM/todo.txt"
