@@ -11,6 +11,9 @@
 [alias]
   br  = branch
   ci  = commit
+  cam = commit -am
+  a   = add
+  bd  = log HEAD --not
   co  = checkout
   df  = diff
   g   = grep -I
@@ -22,6 +25,12 @@
   rv  = review
   sm  = show-merges
   st  = status
+  fs  = flow feature start
+  ff  = flow feature finish
+  rs  = flow release start
+  rf  = flow release finish
+  hs  = flow hotfix start
+  hf  = flow hotfix finish
 
 [branch]
   autosetuprebase = always
