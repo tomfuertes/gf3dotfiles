@@ -159,15 +159,15 @@ alias nup="npm update -gq"
 # alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
 alias up="\
-  notice 'Pulling git-repos/*'; \
+  notice '~/sandbox/git-repos/* Update'; \
   gup; \
-  notice 'Brew Up'; \
+  notice 'Brew Update'; \
   brup; \
-  notice 'NPM Up'; \
+  notice 'NPM Update'; \
   nup; \
   notice 'Gem Update'; \
   gemup; \
-  notice 'Pulling ~/.dotfiles'; \
+  notice '~/.dotfiles Update'; \
   dup; \
 "
 alias gst="gs ~/sandbox/git-repos/*"
