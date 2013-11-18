@@ -29,6 +29,7 @@
   ff  = flow feature finish
   fl  = flow feature list
   fc  = flow feature checkout
+  fr  = flow feature rebase
   rs  = flow release start
   rf  = flow release finish
   rl  = flow release list
