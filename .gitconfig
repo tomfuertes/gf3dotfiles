@@ -39,9 +39,6 @@
   hl  = flow hotfix list
   hc  = flow hotfix checkout
 
-[branch]
-  autosetuprebase = always
-
 [color]
   ui = auto
 
