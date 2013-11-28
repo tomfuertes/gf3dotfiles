@@ -1,0 +1,5 @@
+# lftp settings
+
+set ftp:ssl-allow off
+set ssl:verify-certificate no
+set net:connection-limit 5
