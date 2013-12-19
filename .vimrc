@@ -84,7 +84,7 @@ set undofile " Persistent Undo.
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*,*/source_maps/*
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
@@ -290,6 +290,9 @@ autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
 autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
 autocmd BufRead,BufNewFile *.[ch] endif
 
+" Ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Airline.vim
 let g:airline_powerline_fonts = 1
 let g:airline_enable_syntastic = 1
@@ -365,4 +368,3 @@ let g:syntastic_coffee_coffeelint_args = '-f /Users/gianni/.coffeelint.json'
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 execute pathogen#infect()
 filetype plugin indent on
-
