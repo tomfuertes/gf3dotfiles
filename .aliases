@@ -172,7 +172,7 @@ alias up="\
   dup; \
 "
 alias gst="gs ~/sandbox/git-repos/*"
-alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete'
+alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete; if [ -d .git ]; then git clean -fdx -- tmp; fi;'
 # rec: https://github.com/colorhook/node-smushit
 # alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
 
