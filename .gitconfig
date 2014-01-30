@@ -11,7 +11,9 @@
 [alias]
   br  = branch
   ci  = commit
-  cm = commit -am
+  cm  = commit -am
+  pp  = push
+  p   = pull
   a   = add
   bd  = log HEAD --not
   co  = checkout
