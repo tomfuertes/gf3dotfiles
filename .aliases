@@ -54,6 +54,7 @@ e_list() { echo -e "  \033[1;31m✖\033[0m $1"; }
 
 
 # Git Repos
+alias gmm="git checkout master; git merge staging; git push; git checkout -"
 function gg() {
   if [ $# -gt 0 ]; then
     for i in $(echo $*); do
