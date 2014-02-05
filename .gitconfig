@@ -108,3 +108,5 @@
   default = simple
 [branch]
   autosetuprebase = local
+[help]
+  autocorrect = 5
