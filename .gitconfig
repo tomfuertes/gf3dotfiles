@@ -109,4 +109,4 @@
 [branch]
   autosetuprebase = local
 [help]
-  autocorrect = 5
+  autocorrect = 20
