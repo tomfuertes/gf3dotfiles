@@ -155,7 +155,7 @@ alias pss="open http://localhost:8080 && python -m SimpleHTTPServer 8080"
 alias spss="open http://www.example.com && sudo python -m SimpleHTTPServer 80"
 
 alias dup=". ~/.dotfiles/bootstrap.sh"
-alias gemup="gem update --system"
+alias gemup="gem update --system && rvm get stable"
 alias brup="brew update && brew upgrade && brew prune && brew cleanup"
 alias nup="npm update -g --quiet"
 # alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
