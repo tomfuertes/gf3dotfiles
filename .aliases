@@ -160,7 +160,7 @@ alias brup="brew update && brew upgrade && brew prune && brew cleanup"
 alias nup="npm update -g --quiet"
 # alias sup="svn up ~/sandbox/svn-repos/*; svn status ~/sandbox/svn-repos/*"
 alias gup="gg ~/sandbox/git-repos/*"
-alias pip="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias pup="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 alias up="\
   notice '~/sandbox/git-repos/* Update'; \
   gup; \
