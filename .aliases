@@ -38,7 +38,7 @@ alias ts='t | grep -v LongTerm'
 complete -F _todo t
 
 # Forge
-alias forge="$HOME/Library/Trigger\ Toolkit/forge"
+alias forge="/Applications/TriggerToolkit.app/Contents/MacOS/forge"
 
 ### NOTICES ###
 # Notice title
