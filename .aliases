@@ -181,7 +181,7 @@ alias clean='find . -name "*.pyc" -delete; find . -name ".DS_Store" -delete; if 
 # alias smush='python ~/sandbox/git-repos/smush.py/smush/smush.py -r -s'
 
 alias resetaudio='sudo killall coreaudiod'
-alias killrails='kill $(ps aux | grep '[r]ails' | awk '{print $2}')'
+alias killrails="kill $(ps aux | grep '[r]ails' | awk '{print $2}')"
 
 alias c="clear"
 
